@@ -1,0 +1,28 @@
+{
+  "name": "sapient-react-project",
+  "version": "1.0.0",
+  "description": "A react-redux project of gitHub issue page integrating with Git Hub APIs",
+  "keywords": [],
+  "author": "Param",
+  "license": "ISC",
+  "dependencies": {
+    "connected-react-router": "^4.3.0",
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2",
+    "react-redux": "^5.0.7",
+    "react-router-dom": "^4.3.1",
+    "react-router-redux": "^4.0.4",
+    "react-scripts": "1.1.4",
+    "redux": "^4.0.0",
+    "redux-thunk": "^2.3.0",
+    "history": "^4.7.2"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "main": "index.js",
+  "devDependencies": {}
+}
