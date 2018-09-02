@@ -1,0 +1,22 @@
+.issue-list {
+    margin: 40px auto;
+  }
+
+  .issue {
+    border-bottom: 1px solid;
+    padding: 15px 25px;
+    cursor: pointer;
+    text-align: left;
+}
+
+.issue:hover {
+    background-color: #f7f7f7;
+}
+  
+.issue-no {
+    color: #28a745;
+  }
+  
+  .issue-title {
+    font-weight: bold;
+  }

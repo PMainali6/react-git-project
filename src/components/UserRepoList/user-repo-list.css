@@ -1,0 +1,27 @@
+.user-repo-list {
+    text-align: center;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.repo-name {
+    width: calc(33% - 40px);
+    border: 1px solid #3434;
+    padding: 20px 10px;
+    margin: 20px;
+    word-break: break-word;
+    background-color: rgb(246, 248, 250);
+    border-color: rgb(246, 248, 251);
+    cursor: pointer;
+}
+
+.repo-name:hover {
+    background-color: #f7f7f7;
+}
+
+.container {
+    margin-bottom: 40px;
+    text-align: center;
+}

@@ -1,0 +1,70 @@
+.single-issue-container {
+    text-align: left;
+}
+
+.btn-custom {
+    background-color: #28a745;
+    color: #fff;
+    border-radius: 5px;
+    padding: 5px;
+    text-transform: uppercase;
+  }
+  
+  .single-issue-description {
+    margin-top: 50px;
+  }
+  
+  .issue-description {
+    padding: 15px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    background-color: #eee;
+  }
+
+  .issue-no, .issue-title {
+      text-align: left;
+      margin: 0;
+  }
+
+  .issue-title {
+      margin-bottom: 10px;
+  }
+
+.comment-title {
+    text-align: left;
+}
+
+.comment {
+    background-color: #eee;
+    padding: 20px;
+    border-radius: 25px;
+    display: flex;
+    justify-content: flex-start;
+    margin: 30px 0;
+  }
+  
+  .avatar,
+  .creator-name,
+  .comment-body {
+    margin-right: 30px
+  }
+  
+  .avatar img {
+    border-radius: 50%;
+    height: 50px;
+  }
+  
+  .comment-form {
+    position: relative;
+  }
+  
+  .comment-form input[type=submit] {
+    width: auto;
+    border-radius: 5px;
+    border-color: #28a900;
+    padding: 5px 10px;
+    position: absolute;
+    right: 0;
+    top: 65px;
+    cursor: pointer;
+  }

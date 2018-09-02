@@ -1,0 +1,36 @@
+.form-container {
+    text-align: center;
+}
+
+.username-form {
+    margin: 40px 0;
+}
+
+.username-form::after {
+    content: '';
+    clear: both;
+    display: table;
+}
+
+input[type=text] {
+    float: right;
+    width: 80%;
+    padding: 6px 8px;
+    border: 1px solid #d1d5da;
+    border-radius: 3px;
+    float: left;
+}
+
+input[type=text]:focus {
+    outline: none;
+}
+
+input[type=submit] {
+    float: right;
+    height: 38px;
+    width: 20%;
+    color: #fff;
+    background-color: #28a745;
+    background-image: linear-gradient(-180deg, #34d058 0%, #28a745 90%);
+    cursor: pointer;
+}

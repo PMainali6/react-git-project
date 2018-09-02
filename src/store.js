@@ -7,8 +7,17 @@ import { createBrowserHistory } from 'history';
 const history = createBrowserHistory();
 const middleware = [thunk, routerMiddleware(history)];
 
+const defaultStore = {
+    data: {
+        repoList: [],
+        issues: [],
+        comments: []
+    }
+}
+
 const store = createStore (
     connectRouter(history)(rootReducer),
+    defaultStore,
     applyMiddleware(...middleware)
 );
 

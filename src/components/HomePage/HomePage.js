@@ -1,5 +1,6 @@
 import React, {Component} from "react";
-//import UserRepoList from '../UserRepoList/UserRepoList';
+import UserRepoList from '../UserRepoList/UserRepoList';
+import './homepage.css';
 
 class HomePage extends Component {
     constructor(props) {
@@ -8,22 +9,24 @@ class HomePage extends Component {
     }
 
     handleSubmit(e) {
-        const { fetchUser } = this.props;
+        const { fetchUser, setUsername } = this.props;
 
         e.preventDefault();
         const username = this.refs.username.value;
         this.refs.usernameForm.reset();
+
+        setUsername(username);
         fetchUser(username);
     }
     render() {
         return (
-            <div className="form-container">
+            <div className="container form-container">
                 <form ref="usernameForm" className="username-form" onSubmit={this.handleSubmit}>
                     <input type="text" ref="username" placeholder="Enter the GitHub username" />
                     <input type="submit" className="submit" value="Let's Go!"/>
                 </form>
-                
-                {/* {this.props.repoList ? (<UserRepoList repoList = {this.props.repoList} />) : ''} */}
+    
+                {(this.props.data.repoList.length > 0) ? (<UserRepoList {...this.props} />) : ''}
 
             </div>
         )
