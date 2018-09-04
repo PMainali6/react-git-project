@@ -50,6 +50,7 @@
   .sort-dropdown {
     width: 200px;
     float: right;
+    cursor: pointer;
   }
 
   .comment-count {

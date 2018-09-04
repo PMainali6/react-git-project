@@ -31,11 +31,10 @@ class HomePage extends Component {
                     <UserRepoList {...this.props} />
                 ) : ''}
 
-                {data.error.length ? (
+                {Object.keys(data.error).length ? (
                     <div className="error">
                         Error fetching data
                     </div>) : '' }
-
             </div>
         )
     }
