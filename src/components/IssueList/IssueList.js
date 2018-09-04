@@ -23,7 +23,7 @@ class IssueList extends Component {
         let issuenum = div.dataset.issuenum;
 
         fetchComment(url);
-        history.push(`/${user}/${repo}/issues/${issuenum}`);
+        history.push(`/react-git-project/${user}/${repo}/issues/${issuenum}`);
     }
 
     onPrev(e) {

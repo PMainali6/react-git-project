@@ -48,6 +48,10 @@
   .comment-body {
     margin-right: 30px
   }
+
+  .comment-body {
+    word-break: break-word;
+  }
   
   .avatar img {
     border-radius: 50%;
@@ -70,6 +74,5 @@
   }
 
   .textbox {
-    min-width: 70%;
-    width: 88%;
+    width: calc(100% - 120px);
   }

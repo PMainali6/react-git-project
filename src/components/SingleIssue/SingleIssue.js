@@ -17,7 +17,7 @@ class SingleIssue extends Component {
     render() {
         const { comments, issues } = this.props.data;
         const { location } = this.props;
-        const index = location.pathname.split('/')[4];
+        const index = location.pathname.split('/')[5];
     
         const issue = issues.find(issue => {
             return issue.number == index;

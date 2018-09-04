@@ -17,9 +17,9 @@ class Router extends Component {
             <React.Fragment>
                 <Header />
                 <Switch>
-                    <Route exact path="/" render = {(props) => <HomePage {...this.props}/> } />
-                    <Route exact path="/:user/:repo/issues" render = {(props) => <IssueList {...this.props}/>} />
-                    <Route exact path="/:user/:repo/issues/:issueId" render = {(props) => <SingleIssue {...this.props} />} />
+                    <Route exact path="/react-git-project" render = {(props) => <HomePage {...this.props}/> } />
+                    <Route exact path="/react-git-project/:user/:repo/issues" render = {(props) => <IssueList {...this.props}/>} />
+                    <Route exact path="/react-git-project/:user/:repo/issues/:issueId" render = {(props) => <SingleIssue {...this.props} />} />
                 </Switch>
             </React.Fragment>
         )

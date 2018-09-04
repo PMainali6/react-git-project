@@ -34,7 +34,7 @@ class HomePage extends Component {
                 {Object.keys(data.error).length ? (
                     <div className="error">
                         <p>Error fetching data</p>
-                        <p>Username {data.error.message}</p>
+                        <p>{data.error.message}</p>
                     </div>) : '' }
             </div>
         )

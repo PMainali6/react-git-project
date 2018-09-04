@@ -4,6 +4,7 @@
   "description": "A react-redux project of gitHub issue page integrating with Git Hub APIs",
   "keywords": [],
   "author": "Param",
+  "homepage": "https://pmainali6.github.io/react-git-project",
   "license": "ISC",
   "dependencies": {
     "connected-react-router": "^4.3.0",
@@ -21,8 +22,12 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "main": "index.js",
-  "devDependencies": {}
+  "devDependencies": {
+    "gh-pages": "^1.2.0"
+  }
 }

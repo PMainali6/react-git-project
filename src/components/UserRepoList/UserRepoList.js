@@ -19,7 +19,7 @@ class UserRepoList extends Component {
        setRepoName(repo);
        fetchIssues(link);
     
-       history.push(`/${user}/${repo}/issues`);
+       history.push(`/react-git-project/${user}/${repo}/issues`);
     }
 
     render() {
