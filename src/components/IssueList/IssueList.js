@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import './issue-list.css';
 
+import './issue-list.css';
 
 class IssueList extends Component {
     constructor(props) {
@@ -8,12 +8,13 @@ class IssueList extends Component {
         this.state = {
             page: 0
         };
-        this.handleClick = this.handleClick.bind(this);
+        this.onIssueClick = this.onIssueClick.bind(this);
         this.onPrev = this.onPrev.bind(this);
         this.onNext = this.onNext.bind(this);
+        this.handleSort = this.handleSort.bind(this);
     }
 
-    handleClick(e) {
+    onIssueClick(e) {
         const { fetchComment, history } = this.props;
         const { user, repo } = this.props.data;
 
@@ -47,31 +48,66 @@ class IssueList extends Component {
         btn(newPage);
     }
 
+    handleSort(e) {
+        const { newest,oldest, mostCommented, leastComment } = this.props;
+        const evt = e.target.value;
+
+        switch(evt) {
+            case '1':
+                newest();
+                break;
+            case '2':
+                oldest();
+                break;
+            case '3':
+                mostCommented();
+                break;
+            case '4':
+                leastComment();
+                break;
+        }
+    }
+
     render() {
         const { renderedIssues } = this.props.data;
-    
+
         return (
-            <div className="issue-list container">
-                {renderedIssues.map((issue,i) => {return (
-                    <div className="issue" key={i} data-issuenum = {issue.number}
-                        data-link={issue.comments_url} onClick={this.handleClick}>
-                            <strong className="issue-no">#{issue.number}</strong>
+            <React.Fragment>
+                {renderedIssues.length ? (
+                    <div className="issue-list container">
+                        <select className="sort-dropdown" onChange={this.handleSort} >
+                            <option value="0">Sort</option>
+                            <option value="1">Newest</option>
+                            <option value="2">Oldest</option>
+                            <option value="3">Most Commented</option>
+                            <option value="4">Least Commented</option>
+                    </select>
+            
+                        <div className="rendered-issue-list">
+                            {renderedIssues.map((issue,i) => {return (
+                                <div className="issue" key={i} data-issuenum = {issue.number}
+                                data-link={issue.comments_url} onClick={this.onIssueClick}>
+                                        <strong className="issue-no">#{issue.number}</strong>
 
-                            <div className="activity">
-                                <h6 className="issue-title">{issue.title} </h6>
-                                <span className="issue-status">{issue.state}ed on</span>&nbsp;
-                                <span className="open-on">{issue.created_at} by </span>
-                                <span className="creator">{issue.user.login}</span>&nbsp;
-                                <span className="updated-on"> Updated on {issue.updated_at} </span>&nbsp;
+                                        <div className="activity">
+                                            <h6 className="issue-title">{issue.title} </h6>
+                                            <span className="issue-status">{issue.state}ed on</span>&nbsp;
+                                            <span className="open-on">{issue.created_at} by </span>
+                                            <span className="creator">{issue.user.login}</span>&nbsp;
+                                            <span className="updated-on"> Updated on {issue.updated_at} </span>&nbsp;
+                                            <div className="comment-count">{issue.comments} comments</div>
+                                        </div>
+                                </div>
+                            )}) }
+
+                            <div className="action-btn">
+                                <button className="prev btn" onClick={this.onPrev}> Prev </button>
+                                <button className="next btn" onClick={this.onNext}> Next </button>
                             </div>
-                    </div>
-                )}) }
-
-                <div className="action-btn">
-                    <button className="prev btn" onClick={this.onPrev}> Prev </button>
-                    <button className="next btn" onClick={this.onNext}> Next </button>
-                </div>
-            </div>
+                        </div>
+                    </div>    
+                ) : <div className="loading"> Please show some patience...</div> }
+            </React.Fragment> 
         )
     }
 }

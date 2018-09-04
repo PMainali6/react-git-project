@@ -12,7 +12,8 @@ const defaultStore = {
         repoList: [],
         issues: [],
         comments: [],
-        renderedIssues:[]
+        renderedIssues:[],
+        error: []
     }
 }
 

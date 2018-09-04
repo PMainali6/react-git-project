@@ -51,7 +51,7 @@ class SingleIssue extends Component {
                     ))}
 
                     <form ref="commentForm" className="comment-form" onSubmit={this.handleSubmit}>
-                        <textarea rows="4" cols="120" ref="comment"></textarea>
+                        <textarea rows="4" ref="comment" className="textbox"></textarea>
                         <input type="submit" value="Comment" className="btn-success"/>
                     </form>
             </div>

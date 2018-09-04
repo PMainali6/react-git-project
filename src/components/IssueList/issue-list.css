@@ -1,5 +1,10 @@
 .issue-list {
+  margin-top: 40px;
+}
+
+.rendered-issue-list {
     margin: 40px auto;
+    clear: both;
   }
 
   .issue {
@@ -40,4 +45,22 @@
 
   .next {
     float: right;
+  }
+
+  .sort-dropdown {
+    width: 200px;
+    float: right;
+  }
+
+  .comment-count {
+    float: right;
+  }
+
+  .loading {
+    position: absolute;
+    top: calc(50% - 50px);
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0);
+    font-size: 30px;
+    font-weight: bold;
   }

@@ -68,3 +68,8 @@
     top: 65px;
     cursor: pointer;
   }
+
+  .textbox {
+    min-width: 70%;
+    width: 88%;
+  }

@@ -19,6 +19,7 @@ class HomePage extends Component {
         fetchUser(username);
     }
     render() {
+        const { data } = this.props;
         return (
             <div className="container form-container">
                 <form ref="usernameForm" className="username-form" onSubmit={this.handleSubmit}>
@@ -26,7 +27,14 @@ class HomePage extends Component {
                     <input type="submit" className="submit" value="Let's Go!"/>
                 </form>
     
-                {(this.props.data.repoList.length > 0) ? (<UserRepoList {...this.props} />) : ''}
+                {(this.props.data.repoList.length) && (data.error.length === 0) ? (
+                    <UserRepoList {...this.props} />
+                ) : ''}
+
+                {data.error.length ? (
+                    <div className="error">
+                        Error fetching data
+                    </div>) : '' }
 
             </div>
         )

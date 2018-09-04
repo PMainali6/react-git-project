@@ -19,7 +19,22 @@ function data (state={}, action) {
             return Object.assign({}, state, {renderedIssues: action.payload})
 
         case 'FETCH_COMMENT':
-            return Object.assign({}, state, {comments: action.payload}) 
+            return Object.assign({}, state, {comments: action.payload})
+
+        case 'SORT_NEWEST':
+            return Object.assign({}, state, {renderedIssues: action.payload})
+
+        case 'SORT_OLDEST':
+            return Object.assign({}, state, {renderedIssues: action.payload})
+        
+        case 'MOST_COMMENTED':
+            return Object.assign({}, state, {renderedIssues: action.payload})
+
+        case 'LEAST_COMMENTED':
+            return Object.assign({}, state, {renderedIssues: action.payload})
+        
+        case 'ERROR':
+            return Object.assign({}, state, {error: action.payload})
             
         default:
             return state;
