@@ -49,7 +49,7 @@ class IssueList extends Component {
     }
 
     handleSort(e) {
-        const { newest,oldest, mostCommented, leastComment } = this.props;
+        const { newest,oldest, mostCommented, leastCommented } = this.props;
         const evt = e.target.value;
 
         switch(evt) {
@@ -63,7 +63,7 @@ class IssueList extends Component {
                 mostCommented();
                 break;
             case '4':
-                leastComment();
+                leastCommented();
                 break;
         }
     }

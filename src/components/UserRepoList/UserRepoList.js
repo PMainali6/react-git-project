@@ -26,7 +26,7 @@ class UserRepoList extends Component {
         const { repoList, user } = this.props.data;
         return (
             <React.Fragment>
-                <h3 className="container">Please select {user} repository</h3>
+                <h3 className="container">List of {user} repositories</h3>
                 <div className="user-repo-list container" >
                     {repoList.map((repo,i) => (
                         <div className="repo-name" key={i} data-repo={repo.name}

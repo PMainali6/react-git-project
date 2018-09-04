@@ -181,7 +181,7 @@ export function mostCommented() {
         const issues = data.issues;
 
         const sorted = issues.sort(function(a,b) {
-            return a.comments - b.comments;
+            return b.comments - a.comments;
         });
 
         const payload = sorted.slice(0, 10);
@@ -200,7 +200,7 @@ export function leastCommented() {
         const issues = data.issues;
 
         const sorted = issues.sort(function(a,b) {
-            return b.comments - a.comments;
+            return a.comments - b.comments;
         });
 
         const payload = sorted.slice(0, 10);
