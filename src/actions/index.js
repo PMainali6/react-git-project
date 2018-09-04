@@ -32,20 +32,22 @@ export function setRepoName(repo) {
     }
 }
 
-//fetch issues & redirect
+//fetch issues
 export function fetchIssues(url) {
     console.log("Action -- fetchIssues callled");
     console.log(url);
-
+    
     return (dispatch) => {
         fetch(url).then(res => res.json()).then(res => {
+            const renderedIssues = res.slice(0, 10);
             dispatch({
                 type: 'FETCH_ISSUES',
-                payload: res
+                payload: {res, renderedIssues}
             })
         })
     }
 }
+
 
 //fetch comment
 export function fetchComment(url) {
@@ -59,5 +61,20 @@ export function fetchComment(url) {
                 payload: res
             })
         })
+    }
+}
+
+//next btn
+export function btn(page) {
+    return (dispatch, getState) => {
+        const begin = page * 10;
+        const end = begin + 10;
+        const { data } = getState();
+        const payload = data.issues.slice(begin, end);
+        (payload.length > 0) ?
+        dispatch({
+            type: 'UPDATE_RENDERED_ISSUES',
+            payload
+        }) : ''
     }
 }

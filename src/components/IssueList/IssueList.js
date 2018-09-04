@@ -5,7 +5,12 @@ import './issue-list.css';
 class IssueList extends Component {
     constructor(props) {
         super(props);
+        this.state = {
+            page: 0
+        };
         this.handleClick = this.handleClick.bind(this);
+        this.onPrev = this.onPrev.bind(this);
+        this.onNext = this.onNext.bind(this);
     }
 
     handleClick(e) {
@@ -20,12 +25,34 @@ class IssueList extends Component {
         history.push(`/${user}/${repo}/issues/${issuenum}`);
     }
 
+    onPrev(e) {
+        const { btn } = this.props;
+        let newPage = this.state.page - 1;
+
+        if(newPage < 0 ) { newPage = 0 }
+        this.setState({ page: newPage });
+        btn(newPage);
+    }
+
+    onNext(e) {
+        const { btn, data } = this.props;
+
+        let totalPages = parseInt(data.issues.length/10) - 1;
+        if(data.issues.length % 10) { totalPages = totalPages + 1 }
+
+        let  newPage = this.state.page + 1;
+        if(newPage > totalPages) { newPage = totalPages }
+
+        this.setState({ page: newPage });
+        btn(newPage);
+    }
+
     render() {
-        const { issues } = this.props.data;
+        const { renderedIssues } = this.props.data;
     
         return (
             <div className="issue-list container">
-                {issues.map((issue,i) => {return (
+                {renderedIssues.map((issue,i) => {return (
                     <div className="issue" key={i} data-issuenum = {issue.number}
                         data-link={issue.comments_url} onClick={this.handleClick}>
                             <strong className="issue-no">#{issue.number}</strong>
@@ -39,6 +66,11 @@ class IssueList extends Component {
                             </div>
                     </div>
                 )}) }
+
+                <div className="action-btn">
+                    <button className="prev btn" onClick={this.onPrev}> Prev </button>
+                    <button className="next btn" onClick={this.onNext}> Next </button>
+                </div>
             </div>
         )
     }

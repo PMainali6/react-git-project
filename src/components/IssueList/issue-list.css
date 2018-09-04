@@ -20,3 +20,24 @@
   .issue-title {
     font-weight: bold;
   }
+
+  .action-btn {
+    margin-top: 40px;
+    clear: both;
+  }
+
+ .btn{
+    width: 100px;
+    padding: 6px 8px;
+    border-radius: 5px;
+    background-image: linear-gradient(-180deg, #34d058 0%, #28a745 90%);
+    color: #fff;
+  }
+
+  .prev {
+    float: left;
+  }
+
+  .next {
+    float: right;
+  }

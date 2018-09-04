@@ -18,15 +18,15 @@ class UserRepoList extends Component {
     
        setRepoName(repo);
        fetchIssues(link);
-       
+    
        history.push(`/${user}/${repo}/issues`);
     }
 
     render() {
-        const { repoList } = this.props.data;
+        const { repoList, user } = this.props.data;
         return (
             <React.Fragment>
-                <h3 className="container">Please select the repository</h3>
+                <h3 className="container">Please select {user} repository</h3>
                 <div className="user-repo-list container" >
                     {repoList.map((repo,i) => (
                         <div className="repo-name" key={i} data-repo={repo.name}

@@ -10,7 +10,13 @@ function data (state={}, action) {
             return Object.assign({}, state, {repo: action.payload})
 
         case 'FETCH_ISSUES':
-            return Object.assign({}, state, {issues: action.payload})
+            return Object.assign({}, state, {
+                issues: action.payload.res, 
+                renderedIssues: action.payload.renderedIssues 
+            })
+
+        case 'UPDATE_RENDERED_ISSUES':
+            return Object.assign({}, state, {renderedIssues: action.payload})
 
         case 'FETCH_COMMENT':
             return Object.assign({}, state, {comments: action.payload}) 

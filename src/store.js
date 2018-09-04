@@ -11,7 +11,8 @@ const defaultStore = {
     data: {
         repoList: [],
         issues: [],
-        comments: []
+        comments: [],
+        renderedIssues:[]
     }
 }
 
